@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Système solaire 3D — explorez les huit planètes</title>
+<meta name="description" content="Explorateur 3D interactif du système solaire : planètes, lunes, ceinture d'astéroïdes, données et comparaisons.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div id="loader"><h1>Système solaire</h1><p>Génération des planètes…</p></div>
+<canvas id="c"></canvas>
+<div id="labels"></div>
+<header><h1>Système solaire</h1><p>Glissez pour tourner, molette pour zoomer, cliquez sur un astre.</p></header>
+<aside id="ctrl" aria-label="Réglages">
+  <label>Vitesse du temps <output id="spv">×1</output>
+    <input id="speed" type="range" min="0" max="40" value="10"></label>
+  <div class="row">
+    <button id="pause">Pause</button><button id="ov">Vue d’ensemble</button>
+  </div>
+  <label class="chk"><input type="checkbox" id="tOrb" checked> Orbites</label>
+  <label class="chk"><input type="checkbox" id="tLab" checked> Noms</label>
+  <label class="chk"><input type="checkbox" id="tBelt" checked> Ceinture d’astéroïdes</label>
+</aside>
+<section id="info" hidden aria-live="polite"></section>
+<nav id="nav" aria-label="Astres"></nav>
+<script type="module" src="main.js"></script>
+</body>
+</html>
